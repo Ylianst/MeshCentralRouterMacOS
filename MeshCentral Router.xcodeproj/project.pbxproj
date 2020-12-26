@@ -1,0 +1,387 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		046196402595413E003B75AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461963F2595413E003B75AA /* AppDelegate.swift */; };
+		046196422595413E003B75AA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046196412595413E003B75AA /* ContentView.swift */; };
+		0461964425954140003B75AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461964325954140003B75AA /* Assets.xcassets */; };
+		0461964725954140003B75AA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0461964625954140003B75AA /* Preview Assets.xcassets */; };
+		0461964A25954140003B75AA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0461964825954140003B75AA /* Main.storyboard */; };
+		04619654259542DE003B75AA /* TokenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04619653259542DE003B75AA /* TokenView.swift */; };
+		0461966025954319003B75AA /* CertificateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461965925954318003B75AA /* CertificateView.swift */; };
+		0461966125954319003B75AA /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461965A25954318003B75AA /* LoginView.swift */; };
+		0461966225954319003B75AA /* SettingsDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461965B25954318003B75AA /* SettingsDialogView.swift */; };
+		0461966325954319003B75AA /* AddMapDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461965C25954318003B75AA /* AddMapDialogView.swift */; };
+		0461966425954319003B75AA /* MeshCentralServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461965D25954318003B75AA /* MeshCentralServer.swift */; };
+		0461966525954319003B75AA /* DevicesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0461965E25954319003B75AA /* DevicesView.swift */; };
+		04CEE6BA25956ACB00D95D6B /* SshUserDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE6B925956ACB00D95D6B /* SshUserDialogView.swift */; };
+		04CEE6BD25959CCA00D95D6B /* HelpDialogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04CEE6BC25959CCA00D95D6B /* HelpDialogView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0461963C2595413E003B75AA /* MeshCentral Router.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MeshCentral Router.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0461963F2595413E003B75AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		046196412595413E003B75AA /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		0461964325954140003B75AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0461964625954140003B75AA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0461964925954140003B75AA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		0461964B25954140003B75AA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0461964C25954140003B75AA /* MeshCentral_Router.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MeshCentral_Router.entitlements; sourceTree = "<group>"; };
+		04619653259542DE003B75AA /* TokenView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TokenView.swift; sourceTree = "<group>"; };
+		0461965925954318003B75AA /* CertificateView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CertificateView.swift; sourceTree = "<group>"; };
+		0461965A25954318003B75AA /* LoginView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		0461965B25954318003B75AA /* SettingsDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDialogView.swift; sourceTree = "<group>"; };
+		0461965C25954318003B75AA /* AddMapDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddMapDialogView.swift; sourceTree = "<group>"; };
+		0461965D25954318003B75AA /* MeshCentralServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MeshCentralServer.swift; sourceTree = "<group>"; };
+		0461965E25954319003B75AA /* DevicesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DevicesView.swift; sourceTree = "<group>"; };
+		04CEE6B925956ACB00D95D6B /* SshUserDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SshUserDialogView.swift; sourceTree = "<group>"; };
+		04CEE6BC25959CCA00D95D6B /* HelpDialogView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HelpDialogView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		046196392595413E003B75AA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		046196332595413E003B75AA = {
+			isa = PBXGroup;
+			children = (
+				0461963E2595413E003B75AA /* MeshCentral Router */,
+				0461963D2595413E003B75AA /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		0461963D2595413E003B75AA /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0461963C2595413E003B75AA /* MeshCentral Router.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0461963E2595413E003B75AA /* MeshCentral Router */ = {
+			isa = PBXGroup;
+			children = (
+				0461963F2595413E003B75AA /* AppDelegate.swift */,
+				046196412595413E003B75AA /* ContentView.swift */,
+				0461964325954140003B75AA /* Assets.xcassets */,
+				04619653259542DE003B75AA /* TokenView.swift */,
+				0461965C25954318003B75AA /* AddMapDialogView.swift */,
+				0461965925954318003B75AA /* CertificateView.swift */,
+				0461965E25954319003B75AA /* DevicesView.swift */,
+				0461965A25954318003B75AA /* LoginView.swift */,
+				0461965D25954318003B75AA /* MeshCentralServer.swift */,
+				0461965B25954318003B75AA /* SettingsDialogView.swift */,
+				04CEE6BC25959CCA00D95D6B /* HelpDialogView.swift */,
+				04CEE6B925956ACB00D95D6B /* SshUserDialogView.swift */,
+				0461964825954140003B75AA /* Main.storyboard */,
+				0461964B25954140003B75AA /* Info.plist */,
+				0461964C25954140003B75AA /* MeshCentral_Router.entitlements */,
+				0461964525954140003B75AA /* Preview Content */,
+			);
+			path = "MeshCentral Router";
+			sourceTree = "<group>";
+		};
+		0461964525954140003B75AA /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				0461964625954140003B75AA /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0461963B2595413E003B75AA /* MeshCentral Router */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0461964F25954140003B75AA /* Build configuration list for PBXNativeTarget "MeshCentral Router" */;
+			buildPhases = (
+				046196382595413E003B75AA /* Sources */,
+				046196392595413E003B75AA /* Frameworks */,
+				0461963A2595413E003B75AA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "MeshCentral Router";
+			productName = "MeshCentral Router";
+			productReference = 0461963C2595413E003B75AA /* MeshCentral Router.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		046196342595413E003B75AA /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1230;
+				LastUpgradeCheck = 1230;
+				TargetAttributes = {
+					0461963B2595413E003B75AA = {
+						CreatedOnToolsVersion = 12.3;
+					};
+				};
+			};
+			buildConfigurationList = 046196372595413E003B75AA /* Build configuration list for PBXProject "MeshCentral Router" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 046196332595413E003B75AA;
+			productRefGroup = 0461963D2595413E003B75AA /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0461963B2595413E003B75AA /* MeshCentral Router */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0461963A2595413E003B75AA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0461964A25954140003B75AA /* Main.storyboard in Resources */,
+				0461964725954140003B75AA /* Preview Assets.xcassets in Resources */,
+				0461964425954140003B75AA /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		046196382595413E003B75AA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0461966225954319003B75AA /* SettingsDialogView.swift in Sources */,
+				0461966125954319003B75AA /* LoginView.swift in Sources */,
+				046196422595413E003B75AA /* ContentView.swift in Sources */,
+				0461966325954319003B75AA /* AddMapDialogView.swift in Sources */,
+				04CEE6BA25956ACB00D95D6B /* SshUserDialogView.swift in Sources */,
+				046196402595413E003B75AA /* AppDelegate.swift in Sources */,
+				0461966525954319003B75AA /* DevicesView.swift in Sources */,
+				04619654259542DE003B75AA /* TokenView.swift in Sources */,
+				0461966425954319003B75AA /* MeshCentralServer.swift in Sources */,
+				04CEE6BD25959CCA00D95D6B /* HelpDialogView.swift in Sources */,
+				0461966025954319003B75AA /* CertificateView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		0461964825954140003B75AA /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0461964925954140003B75AA /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0461964D25954140003B75AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0461964E25954140003B75AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		0461965025954140003B75AA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MeshCentral Router/MeshCentral_Router.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"MeshCentral Router/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MeshCentral Router/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "meshcentral.MeshCentral-Router";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0461965125954140003B75AA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "MeshCentral Router/MeshCentral_Router.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_ASSET_PATHS = "\"MeshCentral Router/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = "MeshCentral Router/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MARKETING_VERSION = 0.0.2;
+				PRODUCT_BUNDLE_IDENTIFIER = "meshcentral.MeshCentral-Router";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		046196372595413E003B75AA /* Build configuration list for PBXProject "MeshCentral Router" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0461964D25954140003B75AA /* Debug */,
+				0461964E25954140003B75AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0461964F25954140003B75AA /* Build configuration list for PBXNativeTarget "MeshCentral Router" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0461965025954140003B75AA /* Debug */,
+				0461965125954140003B75AA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 046196342595413E003B75AA /* Project object */;
+}
