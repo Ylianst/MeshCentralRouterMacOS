@@ -790,6 +790,7 @@ class ServerConnection: NSObject, URLSessionWebSocketDelegate {
                 if(isServerTrusted) {
                     // Server is already trusted by the OS
                     completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust:serverTrust))
+                    return
                 } else {
                     // Server is not trusted by the OS
                     if let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0) {
