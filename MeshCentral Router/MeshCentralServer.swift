@@ -178,6 +178,7 @@ public class MeshCentralServer: NSObject, URLSessionWebSocketDelegate, Observabl
     var portMaps:[PortMap] = [PortMap]()
     var authCookie:String? = nil
     var authRCookie:String? = nil
+    var authCookieTimer:Timer? = nil
     
     public func foundDevice(nodeid:String) -> Device? {
         for dev in devices { if (dev.id == nodeid) { return dev } }
@@ -235,6 +236,11 @@ public class MeshCentralServer: NSObject, URLSessionWebSocketDelegate, Observabl
         self.send(str: "{\"action\":\"authcookie\"}")
     }
     
+    @objc func refreshCookie(timer: Timer)
+    {
+        if (state == 3) { self.send(str: "{\"action\":\"authcookie\"}") }
+    }
+    
     public func sendUpdateRequest() {
         self.send(str: "{\"action\":\"meshes\"}")
         self.send(str: "{\"action\":\"nodes\"}")
@@ -242,6 +248,12 @@ public class MeshCentralServer: NSObject, URLSessionWebSocketDelegate, Observabl
     
     private func disconnected() {
         changeState(newState: 0)
+        
+        // Stop the auth cookie timer
+        if (authCookieTimer != nil) {
+            authCookieTimer?.invalidate()
+            authCookieTimer = nil
+        }
         
         // Close all port mappings
         while (portMaps.count > 0) { removePortMap(map:portMaps[0]) }
@@ -335,6 +347,14 @@ public class MeshCentralServer: NSObject, URLSessionWebSocketDelegate, Observabl
             case "serverinfo":
                 // Information about the server
                 changeState(newState: 3)
+                
+                // Start a 24 minute timer to renew authentication cookies
+                DispatchQueue.main.async {
+                    if (self.authCookieTimer == nil) {
+                        self.authCookieTimer = Timer.scheduledTimer(timeInterval: 1440.0, target: self, selector: #selector(self.refreshCookie(timer:)), userInfo: nil, repeats: true)
+                        self.authCookieTimer?.tolerance = 120 // 2 minute tolerence
+                    }
+                }
                 break;
             case "authcookie":
                 authCookie = json?["cookie"] as! String?

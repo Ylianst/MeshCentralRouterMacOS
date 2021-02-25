@@ -216,11 +216,33 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     
                     // Write the file
                     try json.write(to: dialog.url!, atomically: true, encoding: String.Encoding.utf8)
-                } catch let error as NSError { print("File write error: \(error)"); return }
+                } catch let error as NSError {
+                    dialogWarningMessage(message: "File error", text: "\(error)")
+                    return
+                }
             }
         }
     }
 
+}
+
+func dialogOKCancel(question: String, text: String) -> Bool {
+    let alert = NSAlert()
+    alert.messageText = question
+    alert.informativeText = text
+    alert.alertStyle = .warning
+    alert.addButton(withTitle: "OK")
+    alert.addButton(withTitle: "Cancel")
+    return alert.runModal() == .alertFirstButtonReturn
+}
+
+func dialogWarningMessage(message: String, text: String) {
+    let alert = NSAlert()
+    alert.messageText = message
+    alert.informativeText = text
+    alert.alertStyle = .warning
+    alert.addButton(withTitle: "OK")
+    alert.runModal()
 }
 
 func openFile(url:URL) {
@@ -228,7 +250,10 @@ func openFile(url:URL) {
     var readString = ""
     do {
         readString = try String(contentsOf: url)
-    } catch let error as NSError { print("File read error: \(error)"); return }
+    } catch let error as NSError {
+        dialogWarningMessage(message: "File error", text: "\(error)")
+        return
+    }
     
     // Parse the JSON
     do {
@@ -274,7 +299,10 @@ func openFile(url:URL) {
                 }
             }
         }
-    } catch let error as NSError { print("File parse error: \(error)"); return }
+    } catch let error as NSError {
+        dialogWarningMessage(message: "File error", text: "\(error)")
+        return
+    }
 }
 
 func setGlobalViews(parent:ContentView, view:LoginView) {
