@@ -499,6 +499,13 @@ public class MeshCentralServer: NSObject, URLSessionWebSocketDelegate, Observabl
                 //print("isServerTrusted: \(isServerTrusted)")
                 
                 if(isServerTrusted) {
+                    // Compute the certificate hash, this is used to save the .mcrouter files
+                    if let serverCertificate = SecTrustGetCertificateAtIndex(serverTrust, 0) {
+                        let serverCertificateData = SecCertificateCopyData(serverCertificate)
+                        let hashed = SHA384.hash(data: (serverCertificateData as Data))
+                        trustedTlsServerCertHash = hashed.compactMap { String(format: "%02x", $0) }.joined()
+                    }
+                    
                     // Server is already trusted by the OS
                     completionHandler(URLSession.AuthChallengeDisposition.useCredential, URLCredential(trust:serverTrust))
                     return

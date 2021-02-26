@@ -175,6 +175,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
     }
     
+    func jsonEscape(str:String) -> String {
+        return str.replacingOccurrences(of: "\\", with: "\\\\").replacingOccurrences(of: "\"", with: "\\\"")
+    }
+    
     @IBAction func SaveAsFileMenuAction(_ sender: NSMenuItem) {
         if ((parentView == nil) || (parentView!.panel != 3) || (mc == nil)) { return }
         let dialog = NSSavePanel();
@@ -188,8 +192,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 do {
                     // Encode the JSON
                     var json = "{\r\n"
-                    json += "  \"hostname\":\"\(loginView!.serverName)\",\r\n"
-                    json += "  \"username\":\"\(loginView!.serverUser)\",\r\n"
+                    json += "  \"hostname\":\"\(jsonEscape(str: loginView!.serverName))\",\r\n"
+                    json += "  \"username\":\"\(jsonEscape(str: loginView!.serverUser))\",\r\n"
                     //json += "  \"password\":\"\(loginView!.serverPass)\",\r\n"
                     json += "  \"password\":\"\",\r\n"
                     if (trustedTlsServerCertHash != nil) { json += "  \"certhash\":\"\(trustedTlsServerCertHash!)\",\r\n" }
@@ -197,16 +201,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                     var firstMap = true
                     for map:PortMap in mc!.portMaps {
                         if (firstMap == true) { json += "    {\r\n"; firstMap = false } else { json += ",\r\n    {\r\n" }
-                        if (map.name != "") { json += "      \"name\":\"\(map.name)\",\r\n" }
-                        json += "      \"meshId\":\"\(map.device.meshid)\",\r\n"
-                        json += "      \"nodeId\":\"\(map.device.id)\",\r\n"
+                        if (map.name != "") { json += "      \"name\":\"\(jsonEscape(str: map.name))\",\r\n" }
+                        json += "      \"meshId\":\"\(jsonEscape(str: map.device.meshid))\",\r\n"
+                        json += "      \"nodeId\":\"\(jsonEscape(str: map.device.id))\",\r\n"
                         if (map.usage == "HTTP") { json += "      \"appId\":1,\r\n" }
                         if (map.usage == "HTTPS") { json += "      \"appId\":2,\r\n" }
                         if (map.usage == "RDP") { json += "      \"appId\":3,\r\n" }
                         if (map.usage == "SSH") { json += "      \"appId\":4,\r\n" }
                         if (map.usage == "SCP") { json += "      \"appId\":5,\r\n" }
                         json += "      \"protocol\":1,\r\n"
-                        if (map.remoteIp != nil) { json += "      \"remoteIp\":\"\(map.remoteIp!)\",\r\n" }
+                        if (map.remoteIp != nil) { json += "      \"remoteIp\":\"\(jsonEscape(str: map.remoteIp!))\",\r\n" }
                         json += "      \"remotePort\":\(map.remotePort),\r\n"
                         json += "      \"localPort\":\(map.indicatedLocalPort)\r\n"
                         json += "    }"
@@ -264,14 +268,14 @@ func openFile(url:URL) {
         let pass:String? = json?["password"] as! String?
         let hash:String? = json?["certhash"] as! String?
         let mappings = json?["mappings"] as! [Any]
-        if ((host != nil) && (user != nil) && (hash != nil)) {
+        if ((host != nil) && (user != nil)) {
             // Disconnect if needed
             performBackToLogin()
             DispatchQueue.global().asyncAfter(deadline: .now() + 0.1) {
                 loginView!.serverName = host ?? ""
                 loginView!.serverUser = user ?? ""
                 loginView!.serverPass = pass ?? ""
-                trustedTlsServerCertHash = hash ?? ""
+                trustedTlsServerCertHash = hash
                 
                 // Parse the mappings
                 globalAutoMaps = [AutoPortMap]()
@@ -297,6 +301,12 @@ func openFile(url:URL) {
                 if ((host != "") && (user != "") && (pass != nil) && (pass != "")) {
                     performLogin(parent:parentView!, view:loginView!)
                 }
+            }
+        } else {
+            if (host == nil) {
+                dialogWarningMessage(message: "File error", text: "Unable to find server host name.")
+            } else if (user == nil) {
+                dialogWarningMessage(message: "File error", text: "Unable to find login user name.")
             }
         }
     } catch let error as NSError {
